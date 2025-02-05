@@ -20,7 +20,10 @@ export default async function Home() {
 
   return (
     <>
-      <ProductList data={latestProducts} title="Newest Arrivals" limit={4} />
+      <ProductList data={latestProducts.map(product => ({
+        ...product,
+        isFeatures: product.isFeatured
+      }))} title="Newest Arrivals" limit={4} />
     </>
   );
 }

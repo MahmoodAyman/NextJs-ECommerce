@@ -1,9 +1,10 @@
 "use client";
 import { BeatLoader } from "react-spinners";
-const LoadingPage = () => {
+const Loading = () => {
   return (
     <div className="sweet-loading h-screen flex-center">
       <BeatLoader
+        loading={true}
         color="#FFCA28"
         size={15}
         aria-label="loading spineer"
@@ -13,4 +14,4 @@ const LoadingPage = () => {
   );
 };
 
-export default LoadingPage;
+export default Loading;
