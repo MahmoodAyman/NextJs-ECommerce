@@ -34,9 +34,11 @@ export const signUpFormSchema = z
     name: z.string().min(3, "Name must be at least 3 characters"),
     email: z.string().min(3, "Email must be at least 3 characters"),
     password: z.string().min(3, "Password must be at least 3 characters"),
-    confirmPasswod: z.string().min(3, "Password must be at least 3 characters"),
+    confirmPassword: z
+      .string()
+      .min(3, "Password must be at least 3 characters"),
   })
-  .refine((data) => data.password === data.confirmPasswod, {
+  .refine((data) => data.password === data.confirmPassword, {
     message: "Passwords doesn't match",
     path: ["confirmPassword"],
   });

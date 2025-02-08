@@ -39,8 +39,8 @@ export async function signUpWithCredentials(
     const user = signUpFormSchema.parse({
       name: formData.get("name"),
       email: formData.get("email"),
-      confirmPassword: formData.get("confirmPassword"),
       password: formData.get("password"),
+      confirmPassword: formData.get("confirmPassword"),
     });
     const plainPassword = user.password;
     user.password = hashSync(user.password, 10);
